@@ -26,10 +26,13 @@ jobs:
     - name: Install NodeJS
       uses: action/setup-node@v2-beta
       with:
-        cmd: install
+        node-version: 12
    
-
-    # Runs a set of commands using the runners shell
+    - uses: borales/action-yarn@2.0.0
+      with:
+        cmd: install
+      
+      # Runs a set of commands using the runners shell
     - name: build react App
       run: yarn build
     
